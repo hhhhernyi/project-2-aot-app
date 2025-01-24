@@ -1,6 +1,13 @@
 // src/App.jsx
 import { useState, useEffect } from "react";
 import {getCharacters,getEpisodes,getLocations,getOrganizations,getTitans} from "./services/AOTservice";
+import NavBarBig from "./components/NavBar/NavBarBig";
+import NavBarSmall from "./components/NavBar/NavBarSmall";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link, Route, Routes } from "react-router";
+import AllCharactersPage from "./pages/AllCharactersPage";
+import AllEpisodesPage from "./pages/AllEpisodesPage";
+import AllTitansPage from "./pages/AllTitansPage";
 
 const App = () => {
   const [characters, setCharacters] = useState({})
@@ -49,7 +56,19 @@ useEffect(()=>{
   getData();
 },[]);
 
-  return <h1>Hello world!</h1>;
+  return (
+    <>
+    <p><Link to='/'>Attack on titans database</Link></p>
+    <NavBarBig />
+    <NavBarSmall />
+    
+    <Routes>
+      <Route path='/characters' element={<AllCharactersPage />}/>
+      <Route path='/episodes' element={<AllEpisodesPage />}/>
+      <Route path='/titans' element={<AllTitansPage />}/>
+    </Routes>
+    </>
+  );
 };
 
 export default App;

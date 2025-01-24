@@ -24,7 +24,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -64,5 +63,38 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* My CSS rules */
+
+body {
+  background-color: black;
+}
+
+#root {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.big {
+  display: none;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .small {
+    display: none;
+  }
+  .big {
+    display: block;
+    width: 90%;
+  }
+  .me-auto, .navbar-nav {
+    display: flex;
+    justify-content: space-around;
   }
 }
