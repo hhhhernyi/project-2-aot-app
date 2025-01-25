@@ -11,7 +11,7 @@ async function getCharacters() {
       }
   
       const json = await response.json();
-      console.log(json);
+      //console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
@@ -26,7 +26,7 @@ async function getCharacters() {
       }
   
       const json = await response.json();
-      console.log(json);
+      //console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
@@ -41,7 +41,7 @@ async function getCharacters() {
       }
   
       const json = await response.json();
-      console.log(json);
+      //console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
@@ -56,7 +56,7 @@ async function getCharacters() {
       }
   
       const json = await response.json();
-      console.log(json);
+      //console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
@@ -71,11 +71,28 @@ async function getCharacters() {
       }
   
       const json = await response.json();
-      console.log(json);
+      //console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
     }
   }
 
-  export {getCharacters,getEpisodes,getLocations,getOrganizations,getTitans}
+  
+  async function getQuotes() {
+    const url = 'https://aot-quotes-api.herokuapp.com/random'
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+  
+      const json = await response.json();
+      //console.log(json);
+      return json;
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  export default { getCharacters, getEpisodes, getLocations, getOrganizations, getTitans, getQuotes}
