@@ -20,7 +20,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function NavBarSmall() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary small">
+    <div className='smallNavBar'>
+      <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="characters">Characters</NavDropdown.Item>
@@ -29,5 +30,7 @@ export default function NavBarSmall() {
             </NavDropdown>
       </Container>
     </Navbar>
+    </div>
+    
   );
 }

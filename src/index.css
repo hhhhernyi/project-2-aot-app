@@ -80,16 +80,16 @@ body {
   align-items: center;
 }
 
-.big {
+.bigNavBar {
   display: none;
 }
 
 
 @media only screen and (min-width: 768px) {
-  .small {
+  .smallNavBar {
     display: none;
   }
-  .big {
+  .bigNavBar {
     display: block;
     width: 90%;
   }

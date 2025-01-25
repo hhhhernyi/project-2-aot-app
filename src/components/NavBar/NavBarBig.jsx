@@ -19,7 +19,7 @@ import Navbar from 'react-bootstrap/Navbar';
 export default function NavBarBig() {
   return (
     <>
-    <div className="big">
+    <div className="bigNavBar">
         <Navbar bg="dark" data-bs-theme="dark" >
         <Container>
           <Nav className="me-auto">
