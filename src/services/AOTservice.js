@@ -78,9 +78,8 @@ async function getCharacters() {
     }
   }
 
-  
-  async function getQuotes() {
-    const url = 'https://aot-quotes-api.herokuapp.com/random'
+  async function showCharacter(characterId) {
+    const url = `https://api.attackontitanapi.com/characters/${characterId}`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -88,11 +87,24 @@ async function getCharacters() {
       }
   
       const json = await response.json();
-      //console.log(json);
+      return json;
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+  async function showTitan(titanId) {
+    const url = `https://api.attackontitanapi.com/titans/${titanId}`;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+  
+      const json = await response.json();
       return json;
     } catch (error) {
       console.error(error.message);
     }
   }
 
-  export default { getCharacters, getEpisodes, getLocations, getOrganizations, getTitans, getQuotes}
+  export default { getCharacters,showCharacter, getEpisodes, getLocations, getOrganizations, getTitans,showTitan}

@@ -9,7 +9,7 @@ export default function TitansList({ titans }) {
       <h2>All Titans</h2>
       <div className="cardComponent">
         {titans.map((item) => (
-          <Link key={item.id}>
+          <Link key={item.id} to={`/titans/${item.id}`}>
             <Cards name={item.name} img={item.img} />
           </Link>
         ))}
