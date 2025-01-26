@@ -7,8 +7,8 @@ import { useState, useEffect } from "react";
 export default function AllEpisodesPage() {
   // set a default state for episodes
   const [episodes, setEpisodes] = useState([]);
-  const [nextPage, setNextPage] = useState({});
-  const [prevPage, setPrevPage] = useState([])
+  const [nextPage, setNextPage] = useState('');
+  const [prevPage, setPrevPage] = useState('')
   const [pageNumber, setPageNumber] = useState(1)
   const [totalPages, setTotalPages] = useState(0)
 
