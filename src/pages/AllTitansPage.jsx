@@ -18,9 +18,13 @@ export default function AllTitansPage() {
 
 return (
         <>
+<<<<<<< HEAD
         <p>all titans showed here</p>
         <TitansList titans={titans}/>
 
+=======
+        <TitansList titans={titans}/>
+>>>>>>> work
         </>
     )
 }

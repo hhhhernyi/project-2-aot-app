@@ -1,7 +1,11 @@
 import AOTservice from "../services/AOTservice";
 import { useState, useEffect } from "react";
 import CharacterList from "../components/ListComponents/CharacterList";
+<<<<<<< HEAD
 import SearchBar from "../components/SearchBar/SearchBar";
+=======
+import SearchBar from "../components/SearchBar";
+>>>>>>> work
 
 export default function AllCharactersPage() {
   //set a default state for characters
@@ -18,7 +22,10 @@ export default function AllCharactersPage() {
 
   return (
     <>
+<<<<<<< HEAD
       <h2>All characters</h2>
+=======
+>>>>>>> work
       <SearchBar />
       <CharacterList characters={characters} />
     </>

@@ -87,8 +87,24 @@ body {
   width: 90vw;
   max-width: 700px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> work
 
+.listItems {
+  display: flex;
+  flex-wrap: wrap ;
+  justify-content: center;
+}
+
+.cardComponent {
+  margin: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media only screen and (min-width: 768px) {
 
