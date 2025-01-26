@@ -18,7 +18,6 @@ export default function AllEpisodesPage() {
 
   return (
     <>
-      <h2>all episodes showed here</h2>
       <SearchBar />
       <EpisodesList episodes={episodes} />
     </>

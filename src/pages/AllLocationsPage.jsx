@@ -4,22 +4,22 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import LocationsList from "../components/ListComponents/LocationsList";
 
 export default function AllLocations() {
-    const [locations, setLocations] = useState([])
-    
-      useEffect(()=>{
-        const getData = async() => {
-            const locationsData = await AOTservice.getLocations();
-            setLocations(locationsData.results)
-        };
-        getData();
-    },[]);
+    //set default state for locations
+  const [locations, setLocations] = useState([]);
 
-    return (
-        <>
-        
-        <SearchBar />
-        <p>All Locations</p>
-        <LocationsList locations={locations}/>
-        </>
-    )
+  // load the location data when /location page is loaded
+  useEffect(() => {
+    const getData = async () => {
+      const locationsData = await AOTservice.getLocations();
+      setLocations(locationsData.results);
+    };
+    getData();
+  }, []);
+
+  return (
+    <>
+      <SearchBar />
+      <LocationsList locations={locations} />
+    </>
+  );
 }
