@@ -18,7 +18,6 @@ export default function AllCharactersPage() {
 
   return (
     <>
-      <h2>All characters</h2>
       <SearchBar />
       <CharacterList characters={characters} />
     </>
