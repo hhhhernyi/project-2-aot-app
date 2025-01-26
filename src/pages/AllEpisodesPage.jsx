@@ -1,9 +1,5 @@
 import EpisodesList from "../components/ListComponents/EpisodesList";
-<<<<<<< HEAD
 import SearchBar from "../components/SearchBar/SearchBar";
-=======
-import SearchBar from "../components/SearchBar";
->>>>>>> work
 import AOTservice from "../services/AOTservice";
 import { useState, useEffect } from "react";
 
@@ -22,10 +18,7 @@ export default function AllEpisodesPage() {
 
   return (
     <>
-<<<<<<< HEAD
       <h2>all episodes showed here</h2>
-=======
->>>>>>> work
       <SearchBar />
       <EpisodesList episodes={episodes} />
     </>
