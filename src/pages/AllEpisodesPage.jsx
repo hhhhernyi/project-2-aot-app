@@ -1,5 +1,5 @@
 import EpisodesList from "../components/ListComponents/EpisodesList";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/SearchBar/SearchBar";
 import AOTservice from "../services/AOTservice";
 import { useState, useEffect } from "react";
 
