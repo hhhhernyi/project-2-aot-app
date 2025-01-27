@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import AOTservice from "../services/AOTservice";
-import SearchBar from "../components/SearchBar/SearchBar";
 import OrganizationsList from "../components/ListComponents/OrganizationsList";
 
 export default function AllOrganizations() {
@@ -22,7 +21,6 @@ export default function AllOrganizations() {
 
   return (
     <>
-      <SearchBar />
       <OrganizationsList organizations={organizations} />
     </>
   );

@@ -58,7 +58,14 @@ export default function AllEpisodesPage() {
     //   await console.log('current data is: ', episodes)
     // await console.log('get next page of data from: ', nextPage)
   }
+    async function searchFunction(search) {
+      console.log('search for: ', search)
+      // this function need to run a fetch and update with the query
+      const searchResults = await AOTservice.searchEpisodes(search);
+      setEpisodes(searchResults.results);
+      
   
+    }
 
   //functions
   function increasePageNumber() {
@@ -68,6 +75,9 @@ export default function AllEpisodesPage() {
   function decreasePageNumber() {
     console.log('decrease page number function run')
     setPageNumber(pageNumber-1);
+  }
+  function reset() {
+    setPageNumber(1)
   }
   
 
@@ -87,7 +97,7 @@ export default function AllEpisodesPage() {
 
   return (
     <>
-      <SearchBar />
+      <SearchBar searchFunction={searchFunction} reset={reset}/>
       <EpisodesList episodes={episodes} nextPage={nextPage} prevPage={prevPage}/>
       <PageButton pageNumber={pageNumber} totalPages={totalPages} increasePageNumber={increasePageNumber} decreasePageNumber={decreasePageNumber} getNext={getNext} getPrev={getPrev}/>
     </>

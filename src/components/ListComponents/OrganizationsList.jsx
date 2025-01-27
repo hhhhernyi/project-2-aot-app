@@ -9,8 +9,8 @@ export default function OrganizationsList({ organizations }) {
       <h2>All Organizations</h2>
       <div className="cardComponent">
         {organizations.map((item) => (
-          <Link key={item.id}>
-            <Cards name={item.name} img={item.img} />
+          <Link key={item.id} to={`/organizations/${item.id}`}>
+            <Cards name={item.name} img={`${item.img}`} />
           </Link>
         ))}
       </div>

@@ -17,6 +17,7 @@ import OneEpisodePage from "./pages/OneEpisodePage";
 import OneTitanPage from "./pages/OneTitanPage";
 import OneLocationPage from "./pages/OneLocationPage";
 import OneOrgnizationPage from "./pages/OneOrganizationPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const App = () => {
  
@@ -41,6 +42,7 @@ const App = () => {
       <Route path='/locations/:locationsId' element={<OneLocationPage />}/>
       <Route path='/organizations' element={<AllOrganizations />}/>
       <Route path='/organizations/:organizationsId' element={<OneOrgnizationPage />}/>
+      <Route path='/*' element={<NotFoundPage />}/>
     </Routes>
     </>
   );

@@ -1,6 +1,5 @@
 import AOTservice from "../services/AOTservice";
 import { useState, useEffect } from "react";
-import SearchBar from "../components/SearchBar/SearchBar";
 import LocationsList from "../components/ListComponents/LocationsList";
 import PageButton from "../components/Pagination/Pagination";
 
@@ -85,7 +84,6 @@ export default function AllLocations() {
 
   return (
     <>
-      <SearchBar />
       <LocationsList locations={locations} nextPage={nextPage} prevPage={prevPage} />
       <PageButton pageNumber={pageNumber} totalPages={totalPages} increasePageNumber={increasePageNumber} decreasePageNumber={decreasePageNumber} getNext={getNext} getPrev={getPrev}/>
     </>

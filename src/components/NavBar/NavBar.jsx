@@ -11,12 +11,12 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Link href="home"><Link to='/home' className="navBarLinks">home</Link></Nav.Link>
-            <Nav.Link href="characters"><Link to='/characters' className="navBarLinks">characters</Link></Nav.Link>
-            <Nav.Link href="episodes"><Link to='/episodes' className="navBarLinks">episodes</Link></Nav.Link>
-            <Nav.Link href="titans"><Link to='/titans' className="navBarLinks">titans</Link></Nav.Link>
-            <Nav.Link href="locations"><Link to='/locations' className="navBarLinks">locations</Link></Nav.Link>
-            <Nav.Link href="organizations"><Link to='/organizations' className="navBarLinks">organizations</Link></Nav.Link>
+          <Nav.Link href="home"><Link to='/home' className="navBarLinks">Home</Link></Nav.Link>
+            <Nav.Link href="characters"><Link to='/characters' className="navBarLinks">Characters</Link></Nav.Link>
+            <Nav.Link href="episodes"><Link to='/episodes' className="navBarLinks">Episodes</Link></Nav.Link>
+            <Nav.Link href="titans"><Link to='/titans' className="navBarLinks">Titans</Link></Nav.Link>
+            <Nav.Link href="locations"><Link to='/locations' className="navBarLinks">Locations</Link></Nav.Link>
+            <Nav.Link href="organizations"><Link to='/organizations' className="navBarLinks">Organizations</Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

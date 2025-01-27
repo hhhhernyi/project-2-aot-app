@@ -11,6 +11,7 @@ export default function PageButton(props) {
         if (props.pageNumber === props.totalPages) {
             console.log('cannot increase anymore')
         } else {
+            
             props.increasePageNumber();
             props.getNext();
             window.scrollTo({

@@ -10,7 +10,7 @@ export default function TitansList({ titans }) {
       <div className="cardComponent">
         {titans.map((item) => (
           <Link key={item.id} to={`/titans/${item.id}`}>
-            <Cards name={item.name} img={item.img} />
+            <Cards name={item.name} img={item.img.slice(0,-58)} />
           </Link>
         ))}
       </div>

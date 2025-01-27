@@ -71,13 +71,18 @@ button:focus-visible {
 body {
   background-color: black;
 }
+#big{
+  height: 100vh;
+  background-color:rgb(114, 111, 111);
+}
 
 #root {
-  width: 95vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color:rgb(114, 111, 111);
 }
 
 .bigNavBar {
@@ -108,8 +113,135 @@ body {
   color: black;
   text-decoration: none;
 }
+.AllCharOrFavChar{
+  color: black;
+}
+.episodeNumber {
+  color: black;
+  text-decoration: none;
+}
+
+
+.externalLinksSub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid black;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.synopsisDiv {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  max-width: 757px;
+  align-items: center;
+  border: solid black;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #646cff;
+  background-image: url('./assets/images/synopsisBG.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+  height: 300px;
+  margin-bottom: 50px;
+
+}
+.synopsisTitle{
+  font-size: 5vw;
+  font-weight: bolder;
+  color: #f9f9f9;
+  
+}
+.synopsisText {
+  font-size: 1.5vh;
+  color: #f9f9f9;
+  background-color: black;
+  opacity: 70%;
+  
+}
+
+.homepageImg {
+  width: 40vw;
+}
+.forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+.show {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.searchFormButton {
+  margin: 0 5px;
+}
+.searchbar {
+  width: 75vw;
+  max-width: 400px;
+  margin: 5px;
+  border-radius: 10px;
+
+}
+
+.hide {
+display: none;
+}
+.episodeDetail {
+  display: flex;
+  justify-content: center;
+  text-size-adjust: 80%;
+  width: 60vw;
+  margin: 10px;
+  border-radius: 10px;
+}
+.characterDetail{
+  width: 40vw;
+  margin: 10px;
+  border-radius: 10px;
+}
+.organizationDetail {
+  width: 40vw;
+  margin: 10px;
+  border-radius: 10px;
+}
+.episodeList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 @media only screen and (min-width: 768px) {
-
+  .externalLinks {
+    display: flex;
+  }
+  .externalLinksSub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid black;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  .homepageImg {
+    width: 30vw;
+    max-width: 500px;
+  }
+  .synopsisDiv {
+    height: 500px;
+    max-width: 1000px;
+  }
+  .synopsisTitle{
+    font-size: 2vw;
+    font-weight: bolder;
+    color: #f9f9f9;
+    /* backdrop-filter:blur(20px); */
+  }
 }
