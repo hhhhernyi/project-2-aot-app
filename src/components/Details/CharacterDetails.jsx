@@ -1,30 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AOTservice from "../../services/AOTservice";
 
 
 export default function CharacterDetails(props) {
-    const [addFavCharacter, setAddFavCharacter] = useState({
+    const [addFavCharacter, setAddFavCharacter] = useState(
+      {
         "fields": {
           "characterID": '',
           "characterName": "",
           "characterURL": ""
         }
-      })
+      }
+    )
 // functions
-    function handleClickFavourites() {
+     function handleClickFavourites() {
         console.log('added to fav! character ID is: ', props.character.id)
         console.log('added to fav! character Name is: ', props.character.name)
         console.log('added to fav! character image url is: ', props.character.img)
-        setAddFavCharacter({
+        setAddFavCharacter(
+          {
             "fields": {
               "characterID": props.character.id,
               "characterName": props.character.name,
               "characterURL": props.character.img,
             }
-          })
-        AOTservice.addFavCharacters(addFavCharacter);
-
-    }
+          }
+        )
+      }
+      
+      useEffect(()=>{
+        async function postData () {
+          await AOTservice.addFavCharacters(addFavCharacter);
+        };
+        postData();
+      },[addFavCharacter])
+   
     let img = ''
     async function getImg() {
         img = props.character.img.slice(0,-58);

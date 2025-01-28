@@ -9,14 +9,19 @@ export default function EpisodesList({ episodes }) {
       <h2>All Episodes</h2>
       <div className="cardComponent">
         {episodes.map((item) => (
-          <Link key={item.id} to={`/episodes/${item.id}`} className="episodeNumber">
+          <Link
+            key={item.id}
+            to={`/episodes/${item.id}`}
+            className="episodeNumber"
+          >
             <div className="episodeList">
-              <p >Episode: {item.id}</p>
-              <Cards name={item.name} img={item.img.slice(0,-58)} episode={item.id}/>
+              <p>Episode: {item.id}</p>
+              <Cards
+                name={item.name}
+                img={item.img.slice(0, -58)}
+                episode={item.id}
+              />
             </div>
-            
-            
-            
           </Link>
         ))}
       </div>

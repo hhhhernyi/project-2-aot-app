@@ -1,6 +1,4 @@
 // src/App.jsx
-import { useState, useEffect } from "react";
-import AOTservice from "./services/AOTservice";
 import NavBar from "./components/NavBar/NavBar";
 //import NavBarSmall from "./components/NavBar/NavBarSmall";
 import 'bootstrap/dist/css/bootstrap.min.css';

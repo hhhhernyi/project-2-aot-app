@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 export default function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary navbar">
       <Container>
         <Navbar.Brand href="/home">Attack on Titans Database</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

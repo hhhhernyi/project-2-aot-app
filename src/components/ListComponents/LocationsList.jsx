@@ -10,7 +10,7 @@ export default function LocationsList({ locations }) {
       <div className="cardComponent">
         {locations.map((item) => (
           <Link key={item.id} to={`/locations/${item.id}`}>
-            <Cards name={item.name} img={item.img.slice(0,-58)} />
+            <Cards name={item.name} img={item.img.slice(0, -58)} />
           </Link>
         ))}
       </div>
