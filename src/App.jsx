@@ -40,7 +40,7 @@ const App = () => {
       <Route path='/locations/:locationsId' element={<OneLocationPage />}/>
       <Route path='/organizations' element={<AllOrganizations />}/>
       <Route path='/organizations/:organizationsId' element={<OneOrgnizationPage />}/>
-      <Route path='/*' element={<NotFoundPage />}/>
+      <Route path='*' element={<NotFoundPage />}/>
     </Routes>
     </>
   );

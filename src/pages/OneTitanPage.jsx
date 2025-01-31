@@ -15,10 +15,13 @@ export default function OneTitanPage( ) {
         getData();
     },[titansId])
 
+    
+
     console.log(titansId)
+    console.log(titan.img)
     return (
         <>
-        <TitanDetails titan={titan}/>
+        <TitanDetails titan={titan} />
         </>
     )
 }

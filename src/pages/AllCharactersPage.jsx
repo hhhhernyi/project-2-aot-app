@@ -5,6 +5,7 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import PageButton from "../components/Pagination/Pagination";
 import AllCharactersPageNavBar from "../components/NavBar/AllCharacterPageNavBar";
 import FavCharacters from "../components/ListComponents/FavCharacters";
+//import ListComponents from "../components/ListComponents/ListComponent";
 
 export default function AllCharactersPage() {
   //set a default state for characters
@@ -91,6 +92,21 @@ export default function AllCharactersPage() {
   function reset() {
     setPageNumber(1)
   }
+  function fixAllImages() {
+    for (let i=0; i<characters.length; i++) {
+      if (characters[i].name==="Lima"){
+        characters[i].img='https://static.wikia.nocookie.net/shingekinokyojin/images/4/42/Marlene_%28Anime%29_character_image.png/revision/latest/scale-to-width-down/350?cb=20210322020257'
+      } else if (characters[i].name==='Muller') {
+        characters[i].img='https://static.wikia.nocookie.net/shingekinokyojin/images/2/2e/M%C3%BCller_%28Anime%29_character_image.png/revision/latest/scale-to-width-down/350?cb=20210322020257'
+      } else if (characters[i].name==='Alois Tybur'||characters[i].name==='Bruno Tybur'||characters[i].name==='Rico Tybur'||characters[i].name==='Marie Dawk') {
+        characters[i].img='https://static.wikia.nocookie.net/shingekinokyojin/images/8/80/Anonymous.png/revision/latest/scale-to-width-down/350?cb=20210322020257'
+      } else if (characters[i].name==='Florian Reiss') {
+        characters[i].img='https://static.wikia.nocookie.net/shingekinokyojin/images/6/67/Florian_Reiss_%28Anime%29_character_image.png/revision/latest/scale-to-width-down/350?cb=20210322020257'
+      }
+    }
+    
+  }
+  fixAllImages();
  
 
   // load the character data on loading the /characters page

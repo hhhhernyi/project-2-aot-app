@@ -31,8 +31,6 @@ export default function AllLocations() {
       setNextPage(episodesData.info.next_page)
       setPrevPage(episodesData.info.prev_page)
       setTotalPages(episodesData.info.pages)
-  //     await console.log('current data is: ', episodes)
-  //   await console.log('get next page of data from: ', nextPage)
    }
    // i need to hardcode this url as the API does not display the correct data for this particular instance
   async function getPrevData() {
@@ -55,8 +53,6 @@ export default function AllLocations() {
       setNextPage(episodesData.info.next_page)
       setPrevPage(episodesData.info.prev_page)
       setTotalPages(episodesData.info.pages)
-    //   await console.log('current data is: ', episodes)
-    // await console.log('get next page of data from: ', nextPage)
   }
 
   //functions
@@ -81,6 +77,29 @@ export default function AllLocations() {
     };
     getData();
   }, []);
+
+  // not sure if using case switch is better here
+  function fixAllImages() {
+    for (let i=0; i< locations.length; i++) {
+      if (locations[i].name === 'Karifa') {
+        locations[i].img = 'https://static.wikia.nocookie.net/shingekinokyojin/images/f/f5/Large_scale_view_of_Karifa.png/revision/latest/scale-to-width-down/180?cb=20230515170551';
+      } else if (locations[i].name === "Yarckel District") {
+        locations[i].img ='https://static.wikia.nocookie.net/shingekinokyojin/images/6/6b/Ehrmich_District.png/revision/latest/scale-to-width-down/180?cb=20230515170551'
+      } else if (locations[i].name === "Industrial City") {
+        locations[i].img ='https://static.wikia.nocookie.net/shingekinokyojin/images/7/72/Industrial_City.png/revision/latest/scale-to-width-down/180?cb=20230515170551'
+      } else if (locations[i].name === "Jinae" || locations[i].name === "Odel" || locations[i].name === "Utopia District" || locations[i].name === "Snate") {
+        locations[i].img = 'https://pm1.aminoapps.com/6461/83ca49265461b9fb0bc46324e9abb27df6a7a7f2_00.jpg/revision/latest/scale-to-width-down/180?cb=20230515170551'
+      } else if (locations[i].name === "Krolva District") {
+        locations[i].img ='https://static.wikia.nocookie.net/shingekinokyojin/images/a/ad/Trost_District.png/revision/latest/scale-to-width-down/180?cb=20230515170551'
+      } else if ( locations[i].name === "Hizuru") {
+        locations[i].img ='https://otakusnotes.com/wp-content/uploads/2023/08/attack-on-titan-map_Hizuru.webp/revision/latest/scale-to-width-down/180?cb=20230515170551'
+      } else if (locations[i].name === "Lakua") {
+        locations[i].img ='https://pm1.aminoapps.com/6771/dce3e7ebf1da73e03e4584fea96b508d86ada265v2_hq.jpg/revision/latest/scale-to-width-down/180?cb=20230515170551'
+      }
+    }
+  }
+
+  fixAllImages();
 
   return (
     <>

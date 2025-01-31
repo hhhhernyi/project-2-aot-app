@@ -18,6 +18,16 @@ export default function AllOrganizations() {
     };
     getData();
   }, []);
+  function fixImages() {
+    for (let i=0; i< organizations.length; i++) {
+      if(organizations[i].name ==='Reeves Company'){
+        organizations[i].img='https://static.wikia.nocookie.net/shingekinokyojin/images/3/3b/Flegel_declares_himself_boss_of_the_Reeves_Company.png/revision/latest/scale-to-width-down/350?cb=20210322020257'
+      } else if (organizations[i].name ==='Titan Biology Research Society') {
+        organizations[i].img='https://static.wikia.nocookie.net/shingekinokyojin/images/3/39/Marleyan_officers_using_serums.png/revision/latest/scale-to-width-down/350?cb=20210322020257'
+      }
+    }
+  }
+  fixImages();
 
   return (
     <>

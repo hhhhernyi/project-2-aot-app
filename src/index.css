@@ -230,6 +230,14 @@ display: none;
   padding: 5px;
   color: white;
 }
+.cardImg {
+  height: 163px;
+  width: 286px;
+  object-fit: cover;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: 0% 20%; /* X then Y */
+}
 
 
 @media only screen and (min-width: 768px) {

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import AOTservice from "../../services/AOTservice";
+import Toast from 'react-bootstrap/Toast';
+import { useNavigate } from "react-router";
 
 
 export default function CharacterDetails(props) {
@@ -12,20 +14,24 @@ export default function CharacterDetails(props) {
         }
       }
     )
+    const [show, setShow] = useState(false);
+    const navigate = useNavigate()
+
 // functions
      function handleClickFavourites() {
-        console.log('added to fav! character ID is: ', props.character.id)
-        console.log('added to fav! character Name is: ', props.character.name)
-        console.log('added to fav! character image url is: ', props.character.img)
-        setAddFavCharacter(
-          {
+        setAddFavCharacter({
             "fields": {
               "characterID": props.character.id,
               "characterName": props.character.name,
               "characterURL": props.character.img,
             }
-          }
-        )
+          })
+          setShow(true) // this is to show the toast component
+          setTimeout(() => {
+            navigate('/characters')
+          }, 2000);
+          
+
       }
       
       useEffect(()=>{
@@ -41,12 +47,18 @@ export default function CharacterDetails(props) {
         return img;
     }
     getImg();
-    //console.log(props)
+   
     return (
       <>
       <img src={img} className="characterDetail"/>
         <h1 >{props.character.name}</h1>
         <button onClick={handleClickFavourites}>Add to favourites</button>
+        <div >
+          <Toast onClose={() => setShow(false)} show={show} delay={1500} autohide>
+            <Toast.Body>Character added to favourites!</Toast.Body>
+          </Toast>
+        </div>
+
         <div>
         <p className="characterDetail">Gender: {props.character.gender}</p>
         <p className="characterDetail">Age: {props.character.age}</p>
