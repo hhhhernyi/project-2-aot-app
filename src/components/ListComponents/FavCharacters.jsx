@@ -3,6 +3,10 @@ import Cards from "../Cards/Cards";
 
 export default function FavCharacters(props) {
     console.log(props.favouriteCharacters)
+    function handleClickRemoveFromFav() {
+      console.log('removed from favourites')
+
+    }
     return (
         <>
         <div className={props.className}>
@@ -10,10 +14,14 @@ export default function FavCharacters(props) {
 <div className="cardComponent">
         
         {props.favouriteCharacters.map((item) => (
-          
-          <Link key={item.fields.characterID} to={`/characters/${item.fields.characterID}`}>
-            <Cards name={item.fields.characterName} img='https://cdn.vectorstock.com/i/500p/08/19/gray-photo-placeholder-icon-design-ui-vector-35850819.jpg' />
+          <div key={item.fields.characterID} className='favCharactersCard'>
+            <Link  to={`/characters/${item.fields.characterID}`}>
+            <Cards name={item.fields.characterName} img={item.fields.characterURL.slice(0,-58)} />
           </Link>
+          <button className="removeFromFavouriteButton" onClick={handleClickRemoveFromFav}>Remove From Favourites</button>
+          </div>
+          
+          
         ))}
       </div>
       

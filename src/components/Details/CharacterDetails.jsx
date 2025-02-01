@@ -30,9 +30,20 @@ export default function CharacterDetails(props) {
           setTimeout(() => {
             navigate('/characters')
           }, 2000);
-          
-
       }
+      function fixCharacters() {
+        if(props.character.name==='Lima') {
+          console.log('we need to fix this image')
+          props.character.img = 'https://static.wikia.nocookie.net/shingekinokyojin/images/4/42/Marlene_%28Anime%29_character_image.png/revision/latest/scale-to-width-down/350?cb=20210322020257'
+        } else if (props.character.name==='Muller'){
+          props.character.img ='https://static.wikia.nocookie.net/shingekinokyojin/images/2/2e/M%C3%BCller_%28Anime%29_character_image.png/revision/latest/scale-to-width-down/350?cb=20210322020257'
+        } else if (props.character.name ==='Alois Tybur'||props.character.name ==='Bruno Tybur'||props.character.name ==='Rico Tybur'||props.character.name ==='Marie Dawk') {
+          props.character.img ='https://static.wikia.nocookie.net/shingekinokyojin/images/8/80/Anonymous.png/revision/latest/scale-to-width-down/350?cb=20210322020257'
+        } else if (props.character.name ==='Florian Reiss') {
+          props.character.img ='https://static.wikia.nocookie.net/shingekinokyojin/images/6/67/Florian_Reiss_%28Anime%29_character_image.png/revision/latest/scale-to-width-down/350?cb=20210322020257'
+        }
+      }
+      fixCharacters();
       
       useEffect(()=>{
         async function postData () {
