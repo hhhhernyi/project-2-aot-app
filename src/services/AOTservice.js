@@ -173,14 +173,6 @@ async function getCharacters() {
   }
   async function addFavCharacters(data) {
     const url = AIRTABLE_URL;
-    console.log(data)
-    // const data = {
-    //   "fields": {
-    //     "characterID": 100,
-    //     "characterName": 'eren',
-    //     "characterURL": 'google.com',
-    //   }
-    // }
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -201,6 +193,30 @@ async function getCharacters() {
       console.error(error.message);
     }
   }
+  async function delFavCharacters(data) {
+    //const data = 'rec9ZgCLixseMnGFi'
+    console.log(data)
+    const url = AIRTABLE_URL+`/${data}`;
+    try {
+      const response = await fetch(url, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": AIRTABLE_API_KEY
+        }
+      });
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+  
+      const json = await response.json();
+      //console.log(json);
+      return json;
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
   async function searchCharacters(search) {
     const url = BASE_URL + `characters?name=${search}`
     try {
@@ -231,4 +247,4 @@ async function getCharacters() {
       console.error(error.message);
     }
   }
-  export default { getCharacters,showCharacter,getFavCharacters,addFavCharacters,searchCharacters, getEpisodes,showEpisode,searchEpisodes, getLocations,showLocation, getOrganizations,showOrganization, getTitans,showTitan}
+  export default { getCharacters,showCharacter,getFavCharacters,addFavCharacters,searchCharacters,delFavCharacters, getEpisodes,showEpisode,searchEpisodes, getLocations,showLocation, getOrganizations,showOrganization, getTitans,showTitan}

@@ -244,9 +244,24 @@ display: none;
   flex-direction: column;
   align-items: center;
 }
-.removeFromFavouriteButton{
-  border-radius: 10px;
+.singleCharacterPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.characterDetailsButtonDiv {
+  display: flex;
+}
+.characterDetailsButton{
+  border-radius: 10px;
+  margin: 5px;
+  width: 30vw;
+ max-width: 167px;
+ font-size: 1.2vh;
+}
+
 
 
 @media only screen and (min-width: 768px) {
