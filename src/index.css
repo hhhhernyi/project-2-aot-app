@@ -207,6 +207,7 @@ display: none;
   border-radius: 10px;
 }
 .characterDetail{
+  display: flex;
   width: 40vw;
   max-width: 500px;
   margin: 10px;
@@ -261,7 +262,18 @@ display: none;
  max-width: 167px;
  font-size: 1.2vh;
 }
-
+.characterInfo {
+  background-color: white;
+  border-radius: 10px;
+  border:  3px solid black;
+  opacity: 90%;
+}
+#male {
+  color: blue;
+}
+#female {
+  color: rgb(230, 126, 143);
+}
 
 
 @media only screen and (min-width: 768px) {

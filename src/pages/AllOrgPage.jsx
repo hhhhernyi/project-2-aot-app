@@ -1,19 +1,23 @@
 import { useState, useEffect } from "react";
 import AOTservice from "../services/AOTservice";
-import OrganizationsList from "../components/ListComponents/OrganizationsList";
+import LoadingAnimation from "../components/LoadingAnimation/LoadingAnimation";
+import ListComponents from "../components/ListComponents/ListComponent";
 
 export default function AllOrganizations() {
   // set default state
   const [organizations, setOrganization] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   
 
   //load data when page is loaded
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true)
       const organizationData = await AOTservice.getOrganizations();
       // i need to set the data.results for the pages to work
       // not sure why, need to check
       setOrganization(organizationData.results);
+      setIsLoading(false)
       
     };
     getData();
@@ -31,7 +35,8 @@ export default function AllOrganizations() {
 
   return (
     <>
-      <OrganizationsList organizations={organizations} />
+      {isLoading? <LoadingAnimation/>:null}
+      <ListComponents data={organizations} name='organizations' className='cardComponent'/>
     </>
   );
 }

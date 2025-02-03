@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function TitanDetails(props) {
-    //console.log('passed down from onetitanpage: ',props)
     const [abilities, setAbilities] = useState([]);
     const [image, setImage] = useState('');
 
@@ -22,7 +21,6 @@ export default function TitanDetails(props) {
         }
       };
       getData()
-      
     },[props]) 
 
     // passing props into [] makes the code work but i am not sure why
@@ -40,10 +38,7 @@ export default function TitanDetails(props) {
           {abilities.map((item)=>(
             <li key={item}>{item}</li>
           ))}
-           
         </p>
-  
-        
       </>
     );
   }

@@ -22,7 +22,6 @@ export default function SearchBar(props) {
     
   }
   function handleChange(event) {
-    console.log(event.target.value)
     setSearch(event.target.value)
   }
   return (

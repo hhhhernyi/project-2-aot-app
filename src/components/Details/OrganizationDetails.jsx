@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+
 export default function OrganizationDetails(props) {
-    console.log(props)
-    const [image, setImage] = useState('');
+      const [image, setImage] = useState('');
       const [episodeNumber, setEpisodeNumber] = useState('')
       useEffect(()=>{
             const getData = async () => {
@@ -18,8 +18,6 @@ export default function OrganizationDetails(props) {
         <h3>{props.organizations.name}</h3>
         <p>Affliation: {props.organizations.affiliation}</p>
         <p>Anime Debut: Episode {episodeNumber}</p>
-  
-        
       </>
     );
   }

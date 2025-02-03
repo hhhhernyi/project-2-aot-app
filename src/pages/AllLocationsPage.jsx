@@ -1,7 +1,8 @@
 import AOTservice from "../services/AOTservice";
 import { useState, useEffect } from "react";
-import LocationsList from "../components/ListComponents/LocationsList";
 import PageButton from "../components/Pagination/Pagination";
+import LoadingAnimation from "../components/LoadingAnimation/LoadingAnimation";
+import ListComponents from "../components/ListComponents/ListComponent";
 
 export default function AllLocations() {
     //set default state for locations
@@ -10,6 +11,7 @@ export default function AllLocations() {
   const [prevPage, setPrevPage] = useState('')
   const [pageNumber, setPageNumber] = useState(1)
   const [totalPages, setTotalPages] = useState(0)
+  const [isLoading, setIsLoading] = useState(false);
   // async functions
   async function getNextData() {
     const url = nextPage
@@ -19,7 +21,6 @@ export default function AllLocations() {
         throw new Error(`Response status: ${response.status}`);
       }
       const json = await response.json();
-      //console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
@@ -34,6 +35,7 @@ export default function AllLocations() {
    }
    // i need to hardcode this url as the API does not display the correct data for this particular instance
   async function getPrevData() {
+    console.log(prevPage)
     const url = 'https://api.attackontitanapi.com/locations'
     try {
       const response = await fetch(url);
@@ -41,7 +43,6 @@ export default function AllLocations() {
         throw new Error(`Response status: ${response.status}`);
       }
       const json = await response.json();
-      //console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
@@ -57,11 +58,9 @@ export default function AllLocations() {
 
   //functions
   function increasePageNumber() {
-    console.log('increase page number function run')
     setPageNumber(pageNumber+1);
   }
   function decreasePageNumber() {
-    console.log('decrease page number function run')
     setPageNumber(pageNumber-1);
   }
 
@@ -69,11 +68,14 @@ export default function AllLocations() {
   // load the location data when /location page is loaded
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true)
       const locationsData = await AOTservice.getLocations();
       setLocations(locationsData.results);
       setNextPage(locationsData.info.next_page)
       setPrevPage(locationsData.info.prev_page)
       setTotalPages(locationsData.info.pages)
+      setIsLoading(false)
+      
     };
     getData();
   }, []);
@@ -103,7 +105,8 @@ export default function AllLocations() {
 
   return (
     <>
-      <LocationsList locations={locations} nextPage={nextPage} prevPage={prevPage} />
+      {isLoading? <LoadingAnimation/>:null}
+      <ListComponents data={locations} name='locations' className='cardComponent' />
       <PageButton pageNumber={pageNumber} totalPages={totalPages} increasePageNumber={increasePageNumber} decreasePageNumber={decreasePageNumber} getNext={getNext} getPrev={getPrev}/>
     </>
   );

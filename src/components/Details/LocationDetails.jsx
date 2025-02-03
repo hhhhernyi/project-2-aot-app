@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 export default function LocationDetails(props) {
   const [image, setImage] = useState('');
   const [episodeNumber, setEpisodeNumber] = useState('')
@@ -35,9 +36,7 @@ export default function LocationDetails(props) {
           
         };
         getData()
-      },[props]) 
-    console.log(props)
-
+      },[props])
 
     return (
       <>
@@ -46,8 +45,6 @@ export default function LocationDetails(props) {
         <p>Territory: {props.location.territory}</p>
         <p>Region: {props.location.region}</p>
         <p>Anime Debut: Episode {episodeNumber}</p>
-  
-        
       </>
     );
   }

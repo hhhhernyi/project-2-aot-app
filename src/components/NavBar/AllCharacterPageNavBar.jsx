@@ -1,6 +1,4 @@
 import Nav from 'react-bootstrap/Nav';
-//defaultActiveKey="/characters"
-//href="/characters"
 export default function AllCharactersPageNavBar(props) {
     
     function handleClickAllChararacter() {

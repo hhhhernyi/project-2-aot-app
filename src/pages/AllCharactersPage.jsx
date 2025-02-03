@@ -1,11 +1,12 @@
 import AOTservice from "../services/AOTservice";
 import { useState, useEffect } from "react";
-import CharacterList from "../components/ListComponents/CharacterList";
 import SearchBar from "../components/SearchBar/SearchBar";
 import PageButton from "../components/Pagination/Pagination";
 import AllCharactersPageNavBar from "../components/NavBar/AllCharacterPageNavBar";
 import FavCharacters from "../components/ListComponents/FavCharacters";
-//import ListComponents from "../components/ListComponents/ListComponent";
+import LoadingAnimation from "../components/LoadingAnimation/LoadingAnimation";
+import ListComponents from "../components/ListComponents/ListComponent";
+
 
 export default function AllCharactersPage() {
   //set a default state for characters
@@ -17,6 +18,7 @@ export default function AllCharactersPage() {
   const [totalPages, setTotalPages] = useState(0)
   const [AllCharacterVisible, setAllCharacterVisible] = useState(true)
   const [FavCharacterVisible, setFavCharacterVisible] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
   // async functions
   async function getNextData() {
     const url = nextPage
@@ -26,7 +28,6 @@ export default function AllCharactersPage() {
         throw new Error(`Response status: ${response.status}`);
       }
       const json = await response.json();
-      //console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
@@ -49,7 +50,6 @@ export default function AllCharactersPage() {
         throw new Error(`Response status: ${response.status}`);
       }
       const json = await response.json();
-      //console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
@@ -61,12 +61,8 @@ export default function AllCharactersPage() {
       setNextPage(episodesData.info.next_page)
       setPrevPage(episodesData.info.prev_page)
       setTotalPages(episodesData.info.pages)
-    //   await console.log('current data is: ', episodes)
-    // await console.log('get next page of data from: ', nextPage)
   }
  async function searchFunction(search) {
-    console.log('search for: ', search)
-    
     // this function need to run a fetch and update with the query
     const searchResults = await AOTservice.searchCharacters(search);
     setCharacters(searchResults.results);
@@ -74,11 +70,9 @@ export default function AllCharactersPage() {
 
   //functions
   function increasePageNumber() {
-    console.log('increase page number function run')
     setPageNumber(pageNumber+1);
   }
   function decreasePageNumber() {
-    console.log('decrease page number function run')
     setPageNumber(pageNumber-1);
   }
   function showAllCharacters() {
@@ -107,11 +101,10 @@ export default function AllCharactersPage() {
     
   }
   fixAllImages();
- 
-
   // load the character data on loading the /characters page
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true)
       const charactersData = await AOTservice.getCharacters();
       const favCharacterData = await AOTservice.getFavCharacters();
       setCharacters(charactersData.results);
@@ -119,6 +112,7 @@ export default function AllCharactersPage() {
       setNextPage(charactersData.info.next_page)
       setPrevPage(charactersData.info.prev_page)
       setTotalPages(charactersData.info.pages)
+      setIsLoading(false)
     };
     getData();
   }, []);
@@ -127,7 +121,8 @@ export default function AllCharactersPage() {
     <>
       <SearchBar searchFunction={searchFunction} reset={reset}/>
       <AllCharactersPageNavBar showAllCharacters={showAllCharacters} showFavCharacters={showFavCharacters}/>
-      <CharacterList characters={characters} nextPage={nextPage} prevPage={prevPage} className={AllCharacterVisible? 'show': 'hide'}/>
+      {isLoading? <LoadingAnimation/>:null}
+      <ListComponents data={characters} name='characters' nextPage={nextPage} prevPage={prevPage} className={AllCharacterVisible? 'show': 'hide'}/>
       <FavCharacters favouriteCharacters={favouriteCharacters} className={FavCharacterVisible? 'show': 'hide'}/>
       <PageButton pageNumber={pageNumber} totalPages={totalPages} increasePageNumber={increasePageNumber} decreasePageNumber={decreasePageNumber} getNext={getNext} getPrev={getPrev}/>
     </>

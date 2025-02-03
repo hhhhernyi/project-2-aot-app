@@ -4,14 +4,10 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 
 export default function PageButton(props) {
-    
-
-
     function handleNextClick( ) {
         if (props.pageNumber === props.totalPages) {
             console.log('cannot increase anymore')
         } else {
-            
             props.increasePageNumber();
             props.getNext();
             window.scrollTo({
@@ -34,8 +30,6 @@ export default function PageButton(props) {
             });
         }
     }
-
-
   return (
     <ButtonGroup aria-label="Basic example">
       <Button variant="secondary" onClick={handlePrevClick}>Previous Page</Button>

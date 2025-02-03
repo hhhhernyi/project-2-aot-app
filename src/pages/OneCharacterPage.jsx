@@ -12,8 +12,8 @@ export default function OneCharacterPage( ) {
                     setCharacters(data);
                 };
                 getData();
+                
             },[charactersId])
-    console.log(charactersId);
     return (
         <>
         <CharacterDetails character={character} charactersId={charactersId}/>

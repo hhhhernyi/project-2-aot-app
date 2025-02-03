@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
 import AOTservice from "../services/AOTservice";
-import TitansList from "../components/ListComponents/TitansList";
+import LoadingAnimation from "../components/LoadingAnimation/LoadingAnimation";
+import ListComponents from "../components/ListComponents/ListComponent";
 
 export default function AllTitansPage() {
   //set a default state for titans
   const [titans, setTitans] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   // load the titans data on loading the /titans page
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true)
       const titansData = await AOTservice.getTitans();
       setTitans(titansData.results);
+      setIsLoading(false)
     };
     getData();
   }, []);
@@ -29,11 +33,11 @@ export default function AllTitansPage() {
 
   fixAllImages();
 
-  //console.log('titans state: ', titans)
 
   return (
     <>
-      <TitansList titans={titans} />
+      {isLoading? <LoadingAnimation/>:null}
+      <ListComponents data={titans} name='titans' className='cardComponent'/>
     </>
   );
 }

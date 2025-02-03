@@ -2,8 +2,6 @@ import { Link } from "react-router";
 import Cards from "../Cards/Cards";
 
 export default function FavCharacters(props) {
-    console.log(props.favouriteCharacters)
-   
     return (
         <>
         <div className={props.className}>
