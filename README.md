@@ -45,18 +45,18 @@ One of the key takeaways from my previous project is that, i learnt that a mobil
 
 
 ### Wireframe
-![wireframe of page 1](/assets/images/Wireframes/1.jpg)
-![wireframe of page 2](/assets/images/Wireframes/2.jpg)
-![wireframe of page 3](/assets/images/Wireframes/3.jpg)
-![wireframe of page 4](/assets/images/Wireframes/4.jpg)
-![wireframe of page 5](/assets/images/Wireframes/5.jpg)
-![wireframe of page 6](/assets/images/Wireframes/6.jpg)
-![wireframe of page 7](/assets/images/Wireframes/7.jpg)
-![wireframe of page 8](/assets/images/Wireframes/8.jpg)
-![wireframe of page 9](/assets/images/Wireframes/9.jpg)
-![wireframe of page 10](/assets/images/Wireframes/10.jpg)
-![wireframe of page 11](/assets/images/Wireframes/11.jpg)
-![wireframe of page 12](/assets/images/Wireframes/12.jpg)
+![wireframe of page 1](./src/assets/images/Wireframes/1.jpg)
+![wireframe of page 2](./src/assets/images/Wireframes/2.jpg)
+![wireframe of page 3](./src/assets/images/Wireframes/3.jpg)
+![wireframe of page 4](./src/assets/images/Wireframes/4.jpg)
+![wireframe of page 5](./src/assets/images/Wireframes/5.jpg)
+![wireframe of page 6](./src/assets/images/Wireframes/6.jpg)
+![wireframe of page 7](./src/assets/images/Wireframes/7.jpg)
+![wireframe of page 8](./src/assets/images/Wireframes/8.jpg)
+![wireframe of page 9](./src/assets/images/Wireframes/9.jpg)
+![wireframe of page 10](./src/assets/images/Wireframes/10.jpg)
+![wireframe of page 11](./src/assets/images/Wireframes/11.jpg)
+![wireframe of page 12](./src/assets/images/Wireframes/12.jpg)
 
 
 ## Future developments
